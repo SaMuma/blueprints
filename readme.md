@@ -1,3 +1,4 @@
+[![Board Status](https://dev.azure.com/azure-terraform/5c5eb3a0-90ba-4109-967d-554526ddbbaf/0a51b0f0-73a7-4373-81d5-216c0602ea3b/_apis/work/boardbadge/bafe98df-3170-4ab3-9fb5-7eb1166a128d)](https://dev.azure.com/azure-terraform/5c5eb3a0-90ba-4109-967d-554526ddbbaf/_boards/board/t/0a51b0f0-73a7-4373-81d5-216c0602ea3b/Microsoft.EpicCategory)
 # Introduction 
 Welcome to Azure Terraform Landing Zone samples.
 Using this series of landing zones and blueprints based on Terraform, you will be able to deploy easily a complex environment based on virtual datacenter and cloud adoption framework concepts.
