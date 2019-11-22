@@ -11,7 +11,7 @@ module "resource_group_hub" {
 #Specify the subscription logging repositories 
 module "activity_logs" {
   source  = "aztfmod/caf-activity-logs/azurerm"
-  version = "0.2.1"
+  version = "0.2"
 
   prefix              = var.prefix
   resource_group_name = module.resource_group_hub.names["HUB-CORE-SEC"]
@@ -23,7 +23,7 @@ module "activity_logs" {
 #Specify the operations diagnostic logging repositories 
 module "diagnostics_logging" {
   source  = "aztfmod/caf-diagnostics-logging/azurerm"
-  version = "0.1.2"
+  version = "0.1.1"
 
   prefix                = var.prefix
   resource_group_name   = module.resource_group_hub.names["HUB-OPERATIONS"]
@@ -47,7 +47,7 @@ module "log_analytics" {
 #Create the Azure Security Center workspace
 module "security_center" {
   source  = "aztfmod/caf-security-center/azurerm"
-  version = "0.2.1"
+  version = "0.2"
   
   enable_security_center  = var.enable_security_center
   contact_email           = var.security_center["contact_email"]
