@@ -3,7 +3,7 @@ data "azurerm_client_config" "current" {
 }
 
 provider "azurerm" {
-  version = "<= 1.36.1"
+  version = "<= 1.37"
 }
 
 provider "azuread" {
