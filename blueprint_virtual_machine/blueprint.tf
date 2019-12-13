@@ -10,7 +10,7 @@ resource "azurerm_resource_group" "rg" {
 # TODO: Remove when PAW included in the launchpad
 # Create the public ip to connect the server through ssh
 module "public_ip" {
-  source = "github.com/aztfmod/terraform-azurerm-caf-public-ip"
+  source = "github.com/aztfmod/terraform-azurerm-caf-public-ip?ref=1912"
 
   prefix              = var.prefix
   tags                = local.tags
