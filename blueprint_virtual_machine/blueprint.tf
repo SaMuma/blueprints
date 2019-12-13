@@ -10,7 +10,7 @@ resource "azurerm_resource_group" "rg" {
 # TODO: Remove when PAW included in the launchpad
 # Create the public ip to connect the server through ssh
 module "public_ip" {
-  source = "../../modules/terraform-azurerm-caf-public-ip"
+  source = "github.com/aztfmod/terraform-azurerm-caf-public-ip"
 
   prefix              = var.prefix
   tags                = local.tags
@@ -22,7 +22,7 @@ module "public_ip" {
 # TODO: more work to support multiple nic on different subnets
 # Create the networking card of the server
 module "networking_interface" {
-  source = "../../modules/terraform-azurerm-caf-nic"
+  source = "github.com/aztfmod/terraform-azurerm-caf-nic"
 
   prefix                    = var.prefix
   resource_group_name       = azurerm_resource_group.rg.name
@@ -36,7 +36,7 @@ module "networking_interface" {
 
 # Create the virtual machine
 module "vm" {
-  source = "../../modules/terraform-azurerm-caf-vm"
+  source = "github.com/aztfmod/terraform-azurerm-caf-vm?ref=1912"
 
   prefix                        = var.prefix
   resource_group_name           = azurerm_resource_group.rg.name
@@ -55,7 +55,7 @@ module "vm" {
 
 
 module "vm_provisioner" {
-  source = "../../modules/terraform-azurerm-caf-provisioner"
+  source = "github.com/aztfmod/terraform-azurerm-caf-provisioner?ref=1912"
 
   host_connection               = lookup(module.public_ip.fqdn_by_key, var.vm_object.nic_objects.remote_host_pip)
   scripts                       = var.vm_object.caf-provisioner.scripts
