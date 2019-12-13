@@ -6,7 +6,7 @@ resource "azurerm_resource_group" "rg" {
 
 
 module "container_registry" {
-  source = "../../modules/terraform-azurerm-caf-container-registry"
+  source = "github.com/aztfmod/terraform-azurerm-caf-container-registry?ref=1912"
 
   name                = var.acr_object.name
   resource_group_name = azurerm_resource_group.rg.name
